@@ -1,0 +1,20 @@
+{
+  "name": "CRUD",
+  "version": "1.0.0",
+  "description": "Making a Rest-aoi with node.js -> express. Using Postman",
+  "main": "colorData.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiaAR/CRUD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claudiaAR/CRUD/issues"
+  },
+  "homepage": "https://github.com/claudiaAR/CRUD#readme"
+}
