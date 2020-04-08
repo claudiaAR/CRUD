@@ -1,0 +1,36 @@
+GET http://localhost:3000/api/color-schemes/1 HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/color-schemes HTTP/1.1
+
+###
+
+GET http://localhost:3000 HTTP/1.1
+
+###
+
+POST http://localhost:3000/api/color-schemes/ HTTP/1.1
+content-type: application/json
+
+{
+    "colorScheme": "pink sky",
+    "hex": ["#2B886d", "#fbe894", "#fcfaf1", "#71dbd4"],
+    "creatorName": "nike inc"
+}
+
+###
+
+PUT http://localhost:3000/api/color-schemes/e067" HTTP/1.1
+content-type: application/json
+
+{
+    "colorScheme": "hello"
+}
+
+###
+
+DELETE http://localhost:3000/api/color-schemes/5 HTTP/1.1
+content-type: application/json
+
+###
