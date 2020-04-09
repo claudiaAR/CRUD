@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 app.use(express.json())
 let colorData = require('./colorData')
-// import {colorData} from './colorData.js'
 
 //.statics tar in sökvägen till mappen public
 app.use(express.static('public'))

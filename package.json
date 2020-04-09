@@ -1,7 +1,7 @@
 {
   "name": "CRUD",
   "version": "1.0.0",
-  "description": "Making a Rest-aoi with node.js -> express. Using Postman",
+  "description": "Making a Rest-aoi with node.js -> express.",
   "main": "colorData.js",
   "type": "module",
   "scripts": {
