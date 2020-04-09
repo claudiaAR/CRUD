@@ -99,7 +99,7 @@ app.delete('/api/color-schemes/:id', (req,res) => {
        return
    }
      //ToDo validate
-   const index = colorData.indexOf.scheme
+   const index = colorData.indexOf(scheme)
    colorData.splice(index, 1)
 
     res.send(scheme)
