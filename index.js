@@ -1,46 +1,16 @@
 const express = require('express')
 const app = express()
 app.use(express.json())
+let colorData = require('./colorData')
 // import {colorData} from './colorData.js'
 
-const colorData = [
-    {
-        id: '1',
-        colorScheme: 'Summer blur',
-        hex: ['#2B886d', '#fbe894', '#fcfaf1', '#71dbd4'],
-        creatorName: 'pulp agency'
-    },
-    {
-        id: '2',
-        colorScheme: 'midnight',
-        hex: ['#2B886d', '#fbe894', '#fcfaf1', '#71dbd4'],
-        creatorName: 'pulp agency'
-    },
-    {
-        id: '3',
-        colorScheme: 'beach delight',
-        hex: ['#2B886d', '#fbe894', '#fcfaf1', '#71dbd4'],
-        creatorName: 'pulp agency'
-    },
-    {
-        id: '4',
-        colorScheme: 'garden green',
-        hex: ['#2B886d', '#fbe894', '#fcfaf1', '#71dbd4'],
-        creatorName: 'pulp agency'
-    },
-    
-    {
-        id: '5',
-        colorScheme: 'Summer blur',
-        hex: ['#2B886d', '#fbe894', '#fcfaf1', '#71dbd4'],
-        creatorName: 'pulp agency'
-    }
-]
+//.statics tar in sökvägen till mappen public
+app.use(express.static('public'))
 
-//Index page 
-app.get ( '/' ,(req, res) => {
-    res.send('Hello world!!!')
-})
+// //Index page 
+// app.get ( '/' ,(req, res) => {
+//     res.send('Hello world!!!')
+// })
 
 //goes to page color-scheme and renders the array
 //this returns the colorData[]
@@ -81,14 +51,24 @@ app.post('/api/color-schemes', (req, res) => {
 })
 
 app.put('/api/color-schemes/:id', (req,res) => {
-    const scheme = colorData.find(c => c.id === req.params.id)
-     if (!scheme) {
+    const updatedScheme = colorData.find(c => c.id === req.params.id)
+     if (!updatedScheme) {
         res.status(404).send('This page is not found: status 404')
         return
     }
     //ToDo validate
-    scheme.colorScheme = req.body.colorScheme
-    res.send(scheme)
+
+    updatedScheme.colorScheme = req.body.colorScheme
+    updatedScheme.creatorName = req.body.creatorName
+
+    colorData = colorData.map( (scheme) => { 
+        if (scheme.id === req.params.id) {
+            return updatedScheme
+        }
+        return scheme
+    })
+    console.log(colorData)
+    res.send(updatedScheme)
 })
 
 

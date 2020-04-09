@@ -1,15 +1,20 @@
+
+//Show one color scheme
 GET http://localhost:3000/api/color-schemes/1 HTTP/1.1
 
 ###
 
+//Show all color scheme
 GET http://localhost:3000/api/color-schemes HTTP/1.1
 
 ###
 
+//Show Hello World
 GET http://localhost:3000 HTTP/1.1
 
 ###
 
+//Add a color scheme
 POST http://localhost:3000/api/color-schemes HTTP/1.1
 content-type: application/json
 
@@ -21,15 +26,18 @@ content-type: application/json
 
 ###
 
-PUT http://localhost:3000/api/color-schemes/1" HTTP/1.1
+//Uppdate one color scheme
+PUT http://localhost:3000/api/color-schemes/2 HTTP/1.1
 content-type: application/json
 
 {
-    "colorScheme": "hello"
+    "colorScheme": "hello",
+    "creatorName": "yes"
 }
 
 ###
 
+//Delete a color scheme
 DELETE http://localhost:3000/api/color-schemes/1 HTTP/1.1
 content-type: application/json
 
