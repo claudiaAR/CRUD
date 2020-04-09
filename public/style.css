@@ -2,7 +2,10 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 /*basic reset*/
-* {margin: 0; padding: 0;}
+* {
+    margin: 0; 
+    padding: 0;
+}
 
 html {
 	height: 100%;
@@ -20,48 +23,38 @@ body {
 }
 /*form styles*/
 #color-form {
-	width: 400px;
-	margin: 50px auto;
+	width: 25rem;
+	margin: 3rem auto;
 	text-align: center;
-    position: relative;
     border: 0 none;
     outline: none;
-    background: white;
+    background: pink;
     padding: 2rem;
 }
-#color-form fieldset {
-	background: white;
-	border: 0 none;
-	padding: 1.2rem 2rem;
-	box-sizing: border-box;
-	width: 80%;
-	margin: 0 10%;
-	
-	/*stacking fieldsets above each other*/
-	position: relative;
-}
+
 
 /*inputs*/
 #color-form input, #color-form textarea {
-	padding: 15px;
-	margin-bottom: 10px;
+	padding: 1rem;
+	margin-bottom: 0.6rem;
 	width: 100%;
 	box-sizing: border-box;
 	font-family: montserrat;
 	color: #666;
-	font-size: 13px;
+    font-size: 0.8rem;
+    outline: none;
 }
 
 /*button*/
 #color-form .action-button {
-	width: 100px;
+	width: 20vw;
 	background: #2C3E50;
 	font-weight: bold;
 	color: rgb(240, 240, 240);
 	border: 0 none;
 	cursor: pointer;
-	padding: 10px 5px;
-	margin: 10px 5px;
+	padding: 0.6rem 0.3rem;
+	margin: 0.6rem 0.3rem;
 }
 
 /*headings*/
@@ -80,20 +73,35 @@ body {
 
 .showHex{
     display: flex;
-    flex-direction: row-reverse;
     width: 7rem;
     height: 2rem;
+    padding: 1rem;
+    flex-grow: 1;
 }
 
 
 #AllColorSchemes{
     display: flex;
     padding: 4rem;
+    margin: 2rem;
     justify-content: space-between;
     background: #25282a;
     color: #f8f7f2;
+    flex-wrap: wrap;
 }
 
+.creatorName{
+    padding: 0.5rem 0;
+    color: #666;
+    background-color: #f8f7f2;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.colorScheme{
+    padding: 0.5rem 0;
+    color: #f8f7f2;
+    text-align: center;
+}
 
 
 

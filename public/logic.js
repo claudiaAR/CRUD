@@ -11,6 +11,7 @@ function printAllSchemes(colorData) {
     colorData.forEach((scheme) => { 
         let colorScheme = document.createElement("h3")
         colorScheme.innerText = scheme.colorScheme
+        colorScheme.className = "colorScheme"
         
         
         //loops through all hex-values and appends a new div per hex-value
@@ -25,6 +26,7 @@ function printAllSchemes(colorData) {
 
         let creatorName = document.createElement("h3")
         creatorName.innerText = scheme.creatorName
+        creatorName.className = "creatorName"
         
         colorDiv.appendChild(colorScheme)
         colorDiv.appendChild(creatorName)
