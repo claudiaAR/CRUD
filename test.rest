@@ -1,6 +1,6 @@
 
 //Show one color scheme
-GET http://localhost:3000/api/color-schemes/1 HTTP/1.1
+GET http://localhost:3000/api/color-schemes/5 HTTP/1.1
 
 ###
 

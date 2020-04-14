@@ -2,6 +2,10 @@ const express = require('express')
 const app = express()
 app.use(express.json())
 let colorData = require('./colorData')
+// const colorData = require('fs')
+//fs.writeFileSync('file.json', JSON.stringify(jsonVariable));
+
+
 
 //.statics tar in sökvägen till mappen public
 app.use(express.static('public'))
@@ -25,9 +29,7 @@ app.get( '/api/color-schemes/:id', (req, res) => {
 })
 
 let randomizeIdNumber = () => {
-    return Math.floor((1 + Math.random()) * 0x10000)
-        .toString(16)
-        .substring(1);
+    return '_' + Math.random().toString(36).substr(2, 9);
   }
 
 //its like sending in props from colorData array
@@ -35,9 +37,12 @@ app.post('/api/color-schemes', (req, res) => {
     //ToDo make it validate to expected # and 6carecters
     if(!req.body.hex || req.body.hex < 7) {
         res.status(400).send('you have to use a hex value #11AB22 numbers 0-9 and A-F starting witha # ')
-        if (!scheme) res.status(404).send('Oh no, this color color schema does not excist')
+        if (!scheme) res.status(404).send('Oh no, this color color scheme does not excist')
         return
     }
+
+    // let newColor = req.body
+    // newColor.id = randomizeIdNumber()
     const scheme = {
             id: randomizeIdNumber(),
             colorScheme: req.body.colorScheme,
