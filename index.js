@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 app.use(express.json())
 let colorData = require('./colorData')
+const joi = require('joi')
 // const colorData = require('fs')
 //fs.writeFileSync('file.json', JSON.stringify(jsonVariable));
 
@@ -18,6 +19,15 @@ app.use(express.static('public'))
 //goes to page color-scheme and renders the array
 //this returns the colorData[]
 app.get( '/api/color-schemes', (req, res) => {
+    const schema = {
+        colorScheme: joi.string().min3.required()
+    }
+    //400 bad requeste
+    const result = Joi.validate(req.body, schema)
+    if (result.error) {
+        res.status(400).send(resulte.error)
+        return
+    }
     res.send(colorData)
 })
 

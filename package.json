@@ -18,7 +18,5 @@
     "url": "https://github.com/claudiaAR/CRUD/issues"
   },
   "homepage": "https://github.com/claudiaAR/CRUD#readme",
-  "dependencies": {
-    "joi": "^14.3.1"
-  }
+  "dependencies": {}
 }
