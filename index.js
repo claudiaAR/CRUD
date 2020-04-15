@@ -1,10 +1,9 @@
 const express = require('express')
 const app = express()
 app.use(express.json())
-let colorData = require('./colorData')
-const joi = require('joi')
-// const colorData = require('fs')
-//fs.writeFileSync('file.json', JSON.stringify(jsonVariable));
+// let colorData = require('./colorData')
+const fs = require('fs')
+
 
 
 
@@ -19,23 +18,20 @@ app.use(express.static('public'))
 //goes to page color-scheme and renders the array
 //this returns the colorData[]
 app.get( '/api/color-schemes', (req, res) => {
-    const schema = {
-        colorScheme: joi.string().min3.required()
-    }
-    //400 bad requeste
-    const result = Joi.validate(req.body, schema)
-    if (result.error) {
-        res.status(400).send(resulte.error)
-        return
-    }
+    let data = fs.readFileSync('./colorData.json')
+    let colorData = JSON.parse(data)
     res.send(colorData)
 })
 
 //a path with a defind parameter :id
 app.get( '/api/color-schemes/:id', (req, res) => {
-    const scheme = colorData.find(c => c.id === req.params.id)
+    console.log(req.params.id)
+    let data = fs.readFileSync('./colorData.json')
+    let colorData = JSON.parse(data)
+    const scheme = colorData.find(c => c.id == req.params.id)
      if (!scheme) res.status(404).send('This page is not found: status 404')
-     res.send(scheme)
+    res.send(JSON.stringify(scheme))
+    console.log(scheme)
 })
 
 let randomizeIdNumber = () => {
@@ -44,12 +40,15 @@ let randomizeIdNumber = () => {
 
 //its like sending in props from colorData array
 app.post('/api/color-schemes', (req, res) => {
+    let data = fs.readFileSync('./colorData.json')
+    let colorData = JSON.parse(data)
+    
     //ToDo make it validate to expected # and 6carecters
-    if(!req.body.hex || req.body.hex < 7) {
-        res.status(400).send('you have to use a hex value #11AB22 numbers 0-9 and A-F starting witha # ')
-        if (!scheme) res.status(404).send('Oh no, this color color scheme does not excist')
-        return
-    }
+    // if(!req.body.hex || req.body.hex < 7) {
+    //     res.status(400).send('you have to use a hex value #11AB22 numbers 0-9 and A-F starting witha # ')
+    //     if (!scheme) res.status(404).send('Oh no, this color color scheme does not excist')
+    //     return
+    // }
 
     // let newColor = req.body
     // newColor.id = randomizeIdNumber()
@@ -62,9 +61,13 @@ app.post('/api/color-schemes', (req, res) => {
 
         colorData.push(scheme)
         res.send(scheme)
+        fs.writeFileSync('colorData.json', JSON.stringify(colorData, null, 2));
+        
 })
 
 app.put('/api/color-schemes/:id', (req,res) => {
+    let data = fs.readFileSync('./colorData.json')
+    let colorData = JSON.parse(data)
     const updatedScheme = colorData.find(c => c.id === req.params.id)
      if (!updatedScheme) {
         res.status(404).send('This page is not found: status 404')
@@ -83,10 +86,13 @@ app.put('/api/color-schemes/:id', (req,res) => {
     })
     console.log(colorData)
     res.send(updatedScheme)
+    fs.writeFileSync('colorData.json', JSON.stringify(colorData, null, 2));
 })
 
 
 app.delete('/api/color-schemes/:id', (req,res) => {
+    let data = fs.readFileSync('./colorData.json')
+    let colorData = JSON.parse(data)
     const scheme = colorData.find(c => c.id === req.params.id)
     if (!scheme) {
        res.status(404).send('This page is not found: status 404')
@@ -97,6 +103,7 @@ app.delete('/api/color-schemes/:id', (req,res) => {
    colorData.splice(index, 1)
 
     res.send(scheme)
+    fs.writeFileSync('colorData.json', JSON.stringify(colorData, null, 2));
 })
 
 

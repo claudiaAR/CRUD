@@ -19,7 +19,7 @@ POST http://localhost:3000/api/color-schemes HTTP/1.1
 content-type: application/json
 
 {
-    "colorScheme": "pink sky",
+    "colorScheme": "hello",
     "hex": ["#2B886d", "#fbe894", "#fcfaf1", "#71dbd4"],
     "creatorName": "nike inc"
 }
@@ -32,7 +32,7 @@ content-type: application/json
 
 {
     "colorScheme": "hello",
-    "creatorName": "yes"
+    "creatorName": "yes",
 }
 
 ###
