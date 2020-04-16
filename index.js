@@ -68,7 +68,7 @@ app.post('/api/color-schemes', (req, res) => {
 app.put('/api/color-schemes/:id', (req,res) => {
     let data = fs.readFileSync('./colorData.json')
     let colorData = JSON.parse(data)
-    const updatedScheme = colorData.find(c => c.id === req.params.id)
+    const updatedScheme = colorData.find(c => c.id == req.params.id)
      if (!updatedScheme) {
         res.status(404).send('This page is not found: status 404')
         return

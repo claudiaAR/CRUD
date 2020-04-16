@@ -19,13 +19,15 @@ body {
 }
 /*form styles*/
 #color-form {
-	width: 25rem;
+    width: 10rem;
 	margin: 3rem auto;
 	text-align: center;
     border: 0 none;
     outline: none;
     background: white;
     padding: 2rem;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 
@@ -86,7 +88,7 @@ body {
     border: 0 none;
     padding: 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: #25282a;
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23535556' fill-opacity='0.48' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
     color: #f8f7f2;
@@ -114,6 +116,16 @@ body {
     color: #f8f7f2;
     text-align: center;
 }
+
+.idname{
+    padding: 0.5rem 0;
+    color: #f8f7f2;
+    text-align: center;
+    font-size: small;
+    border: 0.5rem solid #f8f7f2;
+}
+
+
 
 .creatorNameLightBG{
     padding: 0.5rem 0;

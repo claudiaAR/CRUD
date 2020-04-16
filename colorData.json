@@ -23,14 +23,14 @@
   },
   {
     "id": 3,
-    "colorScheme": "Flowery pink",
+    "colorScheme": "stella",
     "hex": [
       "#d51d48",
       "#f24463",
       "#faede7",
       "#f7d3c3"
     ],
-    "creatorName": "Chris Coyier"
+    "creatorName": "creators inc"
   },
   {
     "id": 4,
@@ -130,5 +130,27 @@
       "#71dbd4"
     ],
     "creatorName": "nike inc"
+  },
+  {
+    "id": "_d0cn4lar2",
+    "colorScheme": "luke",
+    "hex": [
+      "#2B886d",
+      "#fbe894",
+      "#fcfaf1",
+      "#71dbd4"
+    ],
+    "creatorName": "creators inc"
+  },
+  {
+    "id": "_gv35st2kd",
+    "colorScheme": "luke",
+    "hex": [
+      "#2B886d",
+      "#fbe894",
+      "#fcfaf1",
+      "#71dbd4"
+    ],
+    "creatorName": "creators inc"
   }
 ]

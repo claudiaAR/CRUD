@@ -19,21 +19,21 @@ POST http://localhost:3000/api/color-schemes HTTP/1.1
 content-type: application/json
 
 {
-    "colorScheme": "hello",
+    "colorScheme": "luke",
     "hex": ["#2B886d", "#fbe894", "#fcfaf1", "#71dbd4"],
-    "creatorName": "nike inc"
+    "creatorName": "creators inc"
 }
 
 ###
 
 //Uppdate one color scheme
-PUT http://localhost:3000/api/color-schemes/2 HTTP/1.1
+PUT http://localhost:3000/api/color-schemes/3 HTTP/1.1
 content-type: application/json
 
 {
-    "colorScheme": "hello",
+    "colorScheme": "stella",
     "hex": ["#2B886d", "#fbe894", "#fcfaf1", "#71dbd4"],
-    "creatorName": "yes",
+    "creatorName": "creators inc"
 }
 
 ###
