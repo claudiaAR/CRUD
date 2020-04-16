@@ -17,6 +17,7 @@ function printAllSchemes(colorData) {
 
         //loops through all hex-values and appends a new div per hex-value
         let colorDiv = document.createElement("div")
+        console.log(scheme)
         scheme.hex.forEach(hex => {
             let hexDiv = document.createElement("div")
             hexDiv.className = "showHex"
@@ -75,6 +76,8 @@ getSpecificScheme = () => {
 }
 document.getElementById("oneSchemeButton").addEventListener("click", getSpecificScheme);
 
+
+
 function loadPage(){
     const form = document.getElementById('color-form')
     form.addEventListener('submit', creatScheme)
@@ -85,15 +88,24 @@ function creatScheme(event) {
     event.preventDefault()
 
     const formData = new FormData(event.target)
-    const scheme = {}
-    for (let pair of formData.entries()){
-        const [key, value] = pair
-        scheme[key] = value
+    const scheme = { 
+        hex : []
     }
+    for (let pair of formData.entries()){
+        //deconstuction ['colorScheme', 'hello']
+        const [key, value] = pair
+        if(key.includes("hex")){
+            scheme.hex.push(value)
+        } else{
+            scheme[key] = value
+        }
+        
+    }
+    console.log(scheme)
     fetch('/api/color-schemes', {
         method: 'POST',
         headers: {
-            'Content-Type': 'colorData.json'
+            'Content-Type': 'application/json'
         },body: JSON.stringify(scheme)
     })
 }

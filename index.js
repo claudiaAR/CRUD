@@ -44,19 +44,19 @@ app.post('/api/color-schemes', (req, res) => {
     let colorData = JSON.parse(data)
     
     //ToDo make it validate to expected # and 6carecters
-    if(!req.body.hex || req.body.hex < 7) {
-        res.status(400).send('you have to use a hex value #11AB22 numbers 0-9 and A-F starting witha # ')
-        if (!scheme) res.status(404).send('Oh no, this color color scheme does not excist')
-        return
-    }
+    // if(!req.body.hex || req.body.hex < 7) {
+    //     res.status(400).send('you have to use a hex value #11AB22 numbers 0-9 and A-F starting witha # ')
+    //     if (!scheme) res.status(404).send('Oh no, this color color scheme does not excist')
+    //     return
+    //}
 
     // let newColor = req.body
     // newColor.id = randomizeIdNumber()
     const scheme = {
             id: randomizeIdNumber(),
-            colorScheme: req.body.colorScheme,
+            colorScheme: req.body.schemeName,
             hex: req.body.hex,
-            creatorName: req.body.creatorName
+            creatorName: req.body.creator
         }
 
         colorData.push(scheme)
