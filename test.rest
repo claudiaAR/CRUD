@@ -32,6 +32,7 @@ content-type: application/json
 
 {
     "colorScheme": "hello",
+    "hex": ["#2B886d", "#fbe894", "#fcfaf1", "#71dbd4"],
     "creatorName": "yes",
 }
 

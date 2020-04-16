@@ -132,6 +132,13 @@ body {
     margin-top: -2rem;
 }
 
+label{
+    display: flex;
+    justify-content: start;
+    color: rgba(54, 54, 54, 0.712);
+    font-size: small;
+    padding: 0.3rem 0;
+}
 
 
 @media screen and (max-width: 600px) {

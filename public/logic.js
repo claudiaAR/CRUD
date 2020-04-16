@@ -12,6 +12,8 @@ function printAllSchemes(colorData) {
         let colorScheme = document.createElement("h3")
         colorScheme.innerText = scheme.colorScheme
         colorScheme.className = "colorScheme"
+
+     
         
         
         //loops through all hex-values and appends a new div per hex-value
@@ -22,19 +24,22 @@ function printAllSchemes(colorData) {
             hexDiv.style.backgroundColor = hex
             colorDiv.appendChild(hexDiv)
         });
-       
+        
+        let id = document.createElement("h3")
+        id.innerText = 'ID =' + ' ' + scheme.id
+        id.className = "colorScheme"
+        console.log(id)
 
         let creatorName = document.createElement("h3")
         creatorName.innerText = scheme.creatorName
         creatorName.className = "creatorName"
         
+        colorDiv.appendChild(id)
         colorDiv.appendChild(colorScheme)
         colorDiv.appendChild(creatorName)
         
         allColorsContainer.appendChild(colorDiv)
-    } 
-    
-    );
+    });
 }   
 
 
@@ -42,7 +47,7 @@ function printAllSchemes(colorData) {
 getSpecificScheme = () => {
     let showScheme = document.getElementById("oneScheme")
     let id = document.getElementById("userSchemeInput").value 
-
+    console.log(showScheme)
     fetch("http://localhost:3000/api/color-schemes/" + id).then((response) => {
 
         return response.json()
@@ -51,7 +56,6 @@ getSpecificScheme = () => {
         let colorScheme = document.createElement("h3")
         colorScheme.innerText = scheme.colorScheme
         colorScheme.className = "colorSchemeLightBG"
-        
         
         //loops through all hex-values and appends a new div per hex-value
         let colorDiv = document.createElement("div")
@@ -66,18 +70,11 @@ getSpecificScheme = () => {
         let creatorName = document.createElement("h3")
         creatorName.innerText = scheme.creatorName
         creatorName.className = "creatorNameLightBG"
-        
         colorDiv.appendChild(colorScheme)
         colorDiv.appendChild(creatorName)
-        
         showScheme.appendChild(colorDiv)
     })
 
 }
 document.getElementById("oneSchemeButton").addEventListener("click", getSpecificScheme) ;
   
-// else{
-//     let errorResponse = document.createElement("h4")
-//     errorResponse.innerText = 'Sorry cant find the scheme you are looking for'
-//     allColorsContainer.appendChild(errorResponse)
-// }

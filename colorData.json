@@ -88,16 +88,6 @@
     "creatorName": "nike inc"
   },
   {
-    "id": "_trpqpvbjx",
-    "colorScheme": "",
-    "creatorName": ""
-  },
-  {
-    "id": "_4594akhwq",
-    "colorScheme": "",
-    "creatorName": ""
-  },
-  {
     "id": "_oaaa8ilzk",
     "colorScheme": "hello",
     "hex": [
@@ -120,27 +110,18 @@
     "creatorName": "nike inc"
   },
   {
-    "id": "_7sncskkhs",
-    "colorScheme": "",
-    "creatorName": ""
-  },
-  {
-    "id": "_5bgmkphyc",
-    "colorScheme": "",
-    "creatorName": ""
-  },
-  {
-    "id": "_kng1mk33s",
-    "colorScheme": "",
-    "creatorName": ""
-  },
-  {
-    "id": "_wa35xxcf6",
-    "colorScheme": "",
-    "creatorName": ""
-  },
-  {
     "id": "_6paqhsg1a",
+    "colorScheme": "hello",
+    "hex": [
+      "#2B886d",
+      "#fbe894",
+      "#fcfaf1",
+      "#71dbd4"
+    ],
+    "creatorName": "nike inc"
+  },
+  {
+    "id": "_h6sxqc70d",
     "colorScheme": "hello",
     "hex": [
       "#2B886d",
