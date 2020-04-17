@@ -90,7 +90,7 @@ async function createScheme(event) {
     const scheme = {
         hex: []
     }
-    for (let pair of formData.entries()) {
+    for (let pair of formData.entries()) {q
         const [key, value] = pair //deconstuction ['colorScheme', 'hello']
         if (key.includes("hex")) {  //if key is hex push it to a array
             scheme.hex.push(value)
@@ -119,16 +119,16 @@ async function deleteScheme() {
 }
 
 
-async function editScheme() {
-    let id = document.getElementById("userSchemeInput").value
+// async function editScheme() {
+//     let id = document.getElementById("userSchemeInput").value
 
-    await fetch('/api/color-schemes/' + id, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        }, body: JSON.stringify(scheme)
-    }) 
-    getAllSchemes()
-    let showScheme = document.getElementById("oneScheme")
-    showScheme.innerText = ""
-}
+//     await fetch('/api/color-schemes/' + id, {
+//         method: 'PUT',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }, body: JSON.stringify(scheme)
+//     }) 
+//     getAllSchemes()
+//     let showScheme = document.getElementById("oneScheme")
+//     showScheme.innerText = ""
+// }
