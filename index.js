@@ -4,16 +4,9 @@ app.use(express.json())
 // let colorData = require('./colorData')
 const fs = require('fs')
 
-
-
-
 //.statics tar in sökvägen till mappen public
 app.use(express.static('public'))
 
-// //Index page 
-// app.get ( '/' ,(req, res) => {
-//     res.send('Hello world!!!')
-// })
 
 //goes to page color-scheme and renders the array
 //this returns the colorData[]
@@ -25,13 +18,11 @@ app.get( '/api/color-schemes', (req, res) => {
 
 //a path with a defind parameter :id
 app.get( '/api/color-schemes/:id', (req, res) => {
-    console.log(req.params.id)
     let data = fs.readFileSync('./colorData.json')
     let colorData = JSON.parse(data)
     const scheme = colorData.find(c => c.id == req.params.id)
      if (!scheme) res.status(404).send('This page is not found: status 404')
     res.send(JSON.stringify(scheme))
-    console.log(scheme)
 })
 
 let randomizeIdNumber = () => {
@@ -84,7 +75,6 @@ app.put('/api/color-schemes/:id', (req,res) => {
         }
         return scheme
     })
-    console.log(colorData)
     res.send(updatedScheme)
     fs.writeFileSync('colorData.json', JSON.stringify(colorData, null, 2));
 })
