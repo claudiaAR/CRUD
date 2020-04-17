@@ -10,7 +10,7 @@
 <body>
     <div class="flex">
     
-    <form onsubmit="creatScheme(event)">
+    <form onsubmit="createScheme(event)">
         <fieldset id="color-form">
             <h2 class="formTitle">Color Scheme</h2>
             <h3 class="formSubtitle">Create and share your best color scheme</h3>
@@ -45,7 +45,7 @@
                 <input type="text" id="userSchemeInput" placeholder="Name of scheme" />
                 <div class="flex">
                     <button id="oneSchemeButton" class="action-button"> Show </button>
-                    <input type="button" name="delete" class="action-button" value="Delete" />
+                    <button id="deleteButton" class="action-button"> Delete </button>
                 </div>
                 <div class="specificSchemeVueBox" id="oneScheme"> </div>
             </div>

@@ -1,14 +1,25 @@
 window.addEventListener('load', loadPage)
 
+function loadPage() {
+    const form = document.getElementById('color-form')
+    form.addEventListener('submit', createScheme)
+    document.getElementById("oneSchemeButton").addEventListener("click", getSpecificScheme)
+    document.getElementById("deleteButton").addEventListener("click", deleteScheme)
+    getAllSchemes() //also used to clear deleted scheme and 
+}
 
-fetch("http://localhost:3000/api/color-schemes").then((response) => {
-    return response.json()
-}).then((colorData) => {
-    printAllSchemes(colorData)
-})
+function getAllSchemes() {
+    fetch("http://localhost:3000/api/color-schemes").then((response) => {
+        return response.json()
+    }).then((colorData) => {
+        printAllSchemes(colorData)
+    })
+}
 
 function printAllSchemes(colorData) {
     let allColorsContainer = document.getElementById("AllColorSchemes")
+    //rensar tidagere innehåll
+    allColorsContainer.innerText = ""
 
     colorData.forEach((scheme) => {
         let colorScheme = document.createElement("h3")
@@ -74,16 +85,8 @@ getSpecificScheme = () => {
     })
 
 }
-document.getElementById("oneSchemeButton").addEventListener("click", getSpecificScheme);
 
-
-
-function loadPage() {
-    const form = document.getElementById('color-form')
-    form.addEventListener('submit', creatScheme)
-}
-
-function creatScheme(event) {
+async function createScheme(event) {
     event.stopPropagation()
     event.preventDefault()
 
@@ -94,16 +97,28 @@ function creatScheme(event) {
     for (let pair of formData.entries()) {
         //deconstuction ['colorScheme', 'hello']
         const [key, value] = pair
-        if (key.includes("hex")) {
+        if (key.includes("hex")) {  //if key is hex push it to a array
             scheme.hex.push(value)
         } else {
-            scheme[key] = value
+            scheme[key] = value //pairs id, colorSceme and creatorName 
         }
     }
-    fetch('/api/color-schemes', {
+    await fetch('/api/color-schemes', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         }, body: JSON.stringify(scheme)
-    })
+    }) 
+    getAllSchemes()
+}
+
+async function deleteScheme() {
+    let id = document.getElementById("userSchemeInput").value
+
+    await fetch('/api/color-schemes/' + id, {
+        method: 'DELETE'
+    })   
+    getAllSchemes()
+    let showScheme = document.getElementById("oneScheme")
+    showScheme.innerText = ""
 }
