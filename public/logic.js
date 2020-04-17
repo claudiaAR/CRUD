@@ -26,7 +26,7 @@ function printAllSchemes(colorData) {
         });
 
         let id = document.createElement("h3")
-        id.innerText = `ID = ${scheme.id}` 
+        id.innerText = `ID = ${scheme.id}`
         id.className = "idname"
 
         let creatorName = document.createElement("h3")
@@ -78,7 +78,7 @@ document.getElementById("oneSchemeButton").addEventListener("click", getSpecific
 
 
 
-function loadPage(){
+function loadPage() {
     const form = document.getElementById('color-form')
     form.addEventListener('submit', creatScheme)
 }
@@ -88,24 +88,22 @@ function creatScheme(event) {
     event.preventDefault()
 
     const formData = new FormData(event.target)
-    const scheme = { 
-        hex : []
+    const scheme = {
+        hex: []
     }
-    for (let pair of formData.entries()){
+    for (let pair of formData.entries()) {
         //deconstuction ['colorScheme', 'hello']
         const [key, value] = pair
-        if(key.includes("hex")){
+        if (key.includes("hex")) {
             scheme.hex.push(value)
-        } else{
+        } else {
             scheme[key] = value
         }
-        
     }
-    console.log(scheme)
     fetch('/api/color-schemes', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
-        },body: JSON.stringify(scheme)
+        }, body: JSON.stringify(scheme)
     })
 }

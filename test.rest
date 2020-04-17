@@ -1,6 +1,6 @@
 
 //Show one color scheme
-GET http://localhost:3000/api/color-schemes/5 HTTP/1.1
+GET http://localhost:3000/api/color-schemes/2 HTTP/1.1
 
 ###
 
@@ -39,7 +39,7 @@ content-type: application/json
 ###
 
 //Delete a color scheme
-DELETE http://localhost:3000/api/color-schemes/1 HTTP/1.1
+DELETE http://localhost:3000/api/color-schemes/_gv35st2kd HTTP/1.1
 content-type: application/json
 
 ###
