@@ -18,8 +18,7 @@ function getAllSchemes() {
 
 function printAllSchemes(colorData) {
     let allColorsContainer = document.getElementById("AllColorSchemes")
-    //rensar tidagere innehåll
-    allColorsContainer.innerText = ""
+    allColorsContainer.innerText = "" //rensar tidagere innehåll
 
     colorData.forEach((scheme) => {
         let colorScheme = document.createElement("h3")
@@ -28,7 +27,6 @@ function printAllSchemes(colorData) {
 
         //loops through all hex-values and appends a new div per hex-value
         let colorDiv = document.createElement("div")
-        console.log(scheme)
         scheme.hex.forEach(hex => {
             let hexDiv = document.createElement("div")
             hexDiv.className = "showHex"
@@ -56,12 +54,10 @@ function printAllSchemes(colorData) {
 getSpecificScheme = () => {
     let showScheme = document.getElementById("oneScheme")
     let id = document.getElementById("userSchemeInput").value
-    console.log(showScheme)
     fetch("http://localhost:3000/api/color-schemes/" + id).then((response) => {
 
         return response.json()
     }).then((scheme) => {
-        console.log(scheme)
         let colorScheme = document.createElement("h3")
         colorScheme.innerText = scheme.colorScheme
         colorScheme.className = "colorSchemeLightBG"
@@ -75,10 +71,10 @@ getSpecificScheme = () => {
             colorDiv.appendChild(hexDiv)
         });
 
-
         let creatorName = document.createElement("h3")
         creatorName.innerText = scheme.creatorName
         creatorName.className = "creatorNameLightBG"
+
         colorDiv.appendChild(colorScheme)
         colorDiv.appendChild(creatorName)
         showScheme.appendChild(colorDiv)
@@ -95,8 +91,7 @@ async function createScheme(event) {
         hex: []
     }
     for (let pair of formData.entries()) {
-        //deconstuction ['colorScheme', 'hello']
-        const [key, value] = pair
+        const [key, value] = pair //deconstuction ['colorScheme', 'hello']
         if (key.includes("hex")) {  //if key is hex push it to a array
             scheme.hex.push(value)
         } else {
@@ -118,6 +113,21 @@ async function deleteScheme() {
     await fetch('/api/color-schemes/' + id, {
         method: 'DELETE'
     })   
+    getAllSchemes()
+    let showScheme = document.getElementById("oneScheme")
+    showScheme.innerText = ""
+}
+
+
+async function editScheme() {
+    let id = document.getElementById("userSchemeInput").value
+
+    await fetch('/api/color-schemes/' + id, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        }, body: JSON.stringify(scheme)
+    }) 
     getAllSchemes()
     let showScheme = document.getElementById("oneScheme")
     showScheme.innerText = ""
