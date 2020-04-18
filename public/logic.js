@@ -90,7 +90,7 @@ async function createScheme(event) {
     const scheme = {
         hex: []
     }
-    for (let pair of formData.entries()) {q
+    for (let pair of formData.entries()) {
         const [key, value] = pair //deconstuction ['colorScheme', 'hello']
         if (key.includes("hex")) {  //if key is hex push it to a array
             scheme.hex.push(value)
