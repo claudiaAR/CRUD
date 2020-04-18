@@ -2,7 +2,7 @@
 
 This is a REST-API mini project made with NodeJS and Express. To test the API REST Client is used as a plugin in vs-code. The frontend is vanilla JS and CSS. <br>
 
-The idéa is to collect HEX schemes that can be used in projects. Dream scenario would be to have a login so you can get access to all schemes but have a gallery of your favorit ones and that you only can delete your own contributed schemes in the all assess vue.
+The idéa is to collect HEX schemes that can be used in projects. Dream scenario would be to have a login so you can get access to all schemes but have a gallery of your favorit ones and that you only can delete your own contributed schemes in the "all access" vue.
 
 # Requierments
 ✅1. Four endpoints (GET, POST, PUT & DELETE) <br>
