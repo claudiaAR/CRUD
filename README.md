@@ -16,7 +16,7 @@ The idéa is to collect HEX schemes that can be used in projects. Dream scenario
 ✅8. Ytterligare en GET endpoint skall läggas till där det går att hämta ett specifikt objekt <br>
 
 Todo<br>
-Make PUT upate a scheme
+❌Make PUT upate a scheme
 
  
 

@@ -141,5 +141,93 @@
       "#b0403a"
     ],
     "creatorName": "Pulp Agency"
+  },
+  {
+    "id": "_j0po9jf0w",
+    "colorScheme": "claudia",
+    "hex": [
+      "#5fded7",
+      "#fffdf8",
+      "#ffdc8e",
+      "#e22a77"
+    ],
+    "creatorName": "redit"
+  },
+  {
+    "id": "_61n1gdwgx",
+    "colorScheme": "woho",
+    "hex": [
+      "#2B886d",
+      "#71dbd4",
+      "#28624e",
+      "#b6cdb1"
+    ],
+    "creatorName": "working pep"
+  },
+  {
+    "id": "_zwkobrmjg",
+    "colorScheme": "woho",
+    "hex": [
+      "#2B886d",
+      "#71dbd4",
+      "#28624e",
+      "#b6cdb1"
+    ],
+    "creatorName": "working pep"
+  },
+  {
+    "id": "_q4frcbbvv",
+    "colorScheme": "woho",
+    "hex": [
+      "#2B886d",
+      "#71dbd4",
+      "#28624e",
+      "#b6cdb1"
+    ],
+    "creatorName": "working pep"
+  },
+  {
+    "id": "_ws4z5mt8b",
+    "colorScheme": "lex",
+    "hex": [
+      "#71dbd4",
+      "#fcfaf1",
+      "#fbe894",
+      "#2B886d"
+    ],
+    "creatorName": "vouge"
+  },
+  {
+    "id": "_zxh2qadk5",
+    "colorScheme": "Palm in window",
+    "hex": [
+      "#bada55",
+      "#1f3c6f",
+      "#532c1d",
+      "#b6cdb1"
+    ],
+    "creatorName": "working pep"
+  },
+  {
+    "id": "_i19y7donc",
+    "colorScheme": "space",
+    "hex": [
+      "#845EC2",
+      "#B39CD0",
+      "#FBEAFF",
+      "#00C9A7"
+    ],
+    "creatorName": "flowers inc"
+  },
+  {
+    "id": "_rdni369qq",
+    "colorScheme": "bubbling",
+    "hex": [
+      "#F2F625",
+      "#BCB880",
+      "#F6F2CB",
+      "#005248"
+    ],
+    "creatorName": "bubble"
   }
 ]

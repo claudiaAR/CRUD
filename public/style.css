@@ -19,15 +19,12 @@ body {
 }
 /*form styles*/
 #color-form {
-    width: 10rem;
-	margin: 3rem auto;
+    margin-top: 2rem;
 	text-align: center;
     border: 0 none;
     outline: none;
     background: white;
     padding: 2rem;
-    display: flex;
-    justify-content: space-evenly;
 }
 
 
@@ -52,11 +49,41 @@ body {
 	border: 0 none;
 	cursor: pointer;
 	padding: 0.6rem 0.3rem;
-	margin: 0.6rem 0.3rem;
+    margin: 0.6rem 0.3rem;
+    outline: 0;
 }
+
+.action-button-secundary{
+    width: 20vw;
+	background-color: #FFE4F6;
+	font-weight: bold;
+	color: #2C3E50;
+	border: 0 none;
+	cursor: pointer;
+	padding: 0.6rem 0.3rem;
+    margin: 0.6rem 0.3rem;
+    outline: 0;
+}
+
+.action-button-update{
+    width: 20vw;
+	background-color: #FFE4F6;
+	font-weight: bold;
+	color: #2C3E50;
+	border: 0 none;
+	cursor: pointer;
+	padding: 0.6rem 0.3rem;
+    margin: 0.6rem 0.3rem;
+    width: 9rem;
+    margin-right: 1rem;
+    outline: 0;
+
+}
+
 
 .flex{
     display: flex;
+    justify-content: space-evenly;
 }
 
 /*headings*/
@@ -83,20 +110,19 @@ body {
 
 
 .schemeVueBox{
-    max-width: 100%;
-	margin: 3rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     border: 0 none;
     padding: 2rem;
-    display: flex;
-    justify-content: space-evenly;
     background-color: #25282a;
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23535556' fill-opacity='0.48' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
     color: #f8f7f2;
-    flex-wrap: wrap; 
+
 }
 
 .specificSchemeVueBox{
-    align-items: center;
+    justify-content: space-around;
 	margin: 3rem auto;
     border: 0 none;
     padding: 2rem;
@@ -130,18 +156,24 @@ body {
 .creatorNameLightBG{
     padding: 0.5rem 0;
     color: #f8f7f2;
-    background-color: #2C3E50;
+    background-color: #25282a;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23535556' fill-opacity='0.48' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
     text-align: center;
-    margin-bottom: 1rem;
+    width: 9rem;
+   
 }
 .colorSchemeLightBG{
     padding: 0.5rem 0;
     color: #2C3E50;
     text-align: center;
+    width: 7rem;
 }
 
 .title{
     margin-top: -2rem;
+    padding: 2rem;
+    font-size: x-large;
+    font-weight: 700;
 }
 
 label{

@@ -1,3 +1,5 @@
+let selectedScheme 
+
 window.addEventListener('load', loadPage)
 
 function loadPage() {
@@ -50,14 +52,15 @@ function printAllSchemes(colorData) {
     });
 }
 
-
 getSpecificScheme = () => {
     let showScheme = document.getElementById("oneScheme")
     let id = document.getElementById("userSchemeInput").value
     fetch("http://localhost:3000/api/color-schemes/" + id).then((response) => {
-
+    
         return response.json()
     }).then((scheme) => {
+        console.log('scheme')
+        selectedScheme = scheme
         let colorScheme = document.createElement("h3")
         colorScheme.innerText = scheme.colorScheme
         colorScheme.className = "colorSchemeLightBG"
@@ -70,16 +73,65 @@ getSpecificScheme = () => {
             hexDiv.style.backgroundColor = hex
             colorDiv.appendChild(hexDiv)
         });
-
         let creatorName = document.createElement("h3")
         creatorName.innerText = scheme.creatorName
         creatorName.className = "creatorNameLightBG"
 
+        let updateButton = document.createElement("button")
+        updateButton.innerText = 'Update'
+        updateButton.addEventListener('click', printUpdateForm)
+        updateButton.className = "action-button-update"
+
         colorDiv.appendChild(colorScheme)
         colorDiv.appendChild(creatorName)
         showScheme.appendChild(colorDiv)
-    })
+        colorDiv.appendChild(updateButton)
 
+        allColorsContainer.appendChild(updateButton)
+    })
+}
+
+printUpdateForm = () => {
+    let form = document.getElementById("createOrUpdateForm")
+    document.getElementById("newScheme").value = selectedScheme.colorScheme
+    document.getElementById("hex1Input").value = selectedScheme.hex[0]
+    document.getElementById("hex2Input").value = selectedScheme.hex[1]
+    document.getElementById("hex3Input").value = selectedScheme.hex[2]
+    document.getElementById("hex4Input").value = selectedScheme.hex[3]
+    document.getElementById("creatorNameInput").value = selectedScheme.creatorName
+    document.getElementById("formSubmit").value = "Update"
+
+    form.onsubmit = updateScheme
+}
+
+async function updateScheme(event) {
+    event.preventDefault()
+    event.stopPropagation()
+
+    const formData = new FormData(event.target)
+    const scheme = {
+        hex: []
+    }
+    for (let pair of formData.entries()) {
+        const [key, value] = pair //deconstuction ['colorScheme', 'hello']
+        if (key.includes("hex")) {  //if key is hex push it to a array
+            scheme.hex.push(value)
+        } else {
+            scheme[key] = value 
+        }
+    }
+
+    let id = document.getElementById("AllColorSchemes").value
+    scheme.id = selectedScheme.id
+
+    await fetch('/api/color-schemes/', + id, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        }, body: JSON.stringify(scheme)
+    }) 
+    getAllSchemes()
+   
 }
 
 async function createScheme(event) {
@@ -114,21 +166,6 @@ async function deleteScheme() {
         method: 'DELETE'
     })   
     getAllSchemes()
-    let showScheme = document.getElementById("oneScheme")
+    let showScheme = document.getElementById("oneScheme") 
     showScheme.innerText = ""
 }
-
-
-// async function editScheme() {
-//     let id = document.getElementById("userSchemeInput").value
-
-//     await fetch('/api/color-schemes/' + id, {
-//         method: 'PUT',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }, body: JSON.stringify(scheme)
-//     }) 
-//     getAllSchemes()
-//     let showScheme = document.getElementById("oneScheme")
-//     showScheme.innerText = ""
-// }
