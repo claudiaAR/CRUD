@@ -20,10 +20,11 @@ Todo<br>
 
  
 
-## Installation
+## Installation 🚀
+```bash
+npm i express
+```
 [Nodemon](https://www.npmjs.com/package/nodemon) 
-
-<!-- (info om hur projektet byggs och körs) -->
 
 ```bash
 nodemon index.js
