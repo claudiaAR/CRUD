@@ -91,7 +91,7 @@ getSpecificScheme = () => {
     })
 }
 
-printUpdateForm = () => {
+printUpdateForm = (allColorsContainer) => {
     let form = document.getElementById("createOrUpdateForm")
     document.getElementById("newScheme").value = selectedScheme.colorScheme
     document.getElementById("hex1Input").value = selectedScheme.hex[0]
@@ -130,7 +130,7 @@ async function updateScheme(event) {
             'Content-Type': 'application/json'
         }, body: JSON.stringify(scheme)
     }) 
-    getAllSchemes()
+    allColorsContainer()
    
 }
 
