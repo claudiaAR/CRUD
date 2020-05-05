@@ -29,7 +29,7 @@ let randomizeIdNumber = () => {
     return '_' + Math.random().toString(36).substr(2, 9);
   }
 
-//its like sending in props from colorData array
+
 app.post('/api/color-schemes', (req, res) => {
     let data = fs.readFileSync('./colorData.json')
     let colorData = JSON.parse(data)
@@ -47,7 +47,7 @@ app.post('/api/color-schemes', (req, res) => {
             id: randomizeIdNumber(),
             colorScheme: req.body.schemeName,
             hex: req.body.hex,
-            creatorName: req.body.creator
+            creatorName: req.body.creatorName
         }
 
         colorData.push(scheme)
@@ -66,8 +66,8 @@ app.put('/api/color-schemes/:id', (req,res) => {
     }
     //ToDo validate
 
-    updatedScheme.colorScheme = req.body.colorScheme
     updatedScheme.creatorName = req.body.creatorName
+    updatedScheme.colorScheme = req.body.colorScheme
 
     colorData = colorData.map( (scheme) => { 
         if (scheme.id === req.params.id) {
@@ -83,7 +83,7 @@ app.put('/api/color-schemes/:id', (req,res) => {
 app.delete('/api/color-schemes/:id', (req,res) => {
     let data = fs.readFileSync('./colorData.json')
     let colorData = JSON.parse(data)
-    const scheme = colorData.find(c => c.id === req.params.id)
+    const scheme = colorData.find(c => c.id == req.params.id)
     if (!scheme) {
        res.status(404).send('This page is not found: status 404')
        return

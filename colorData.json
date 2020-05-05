@@ -23,14 +23,14 @@
   },
   {
     "id": 3,
-    "colorScheme": "stella",
+    "colorScheme": "Stella",
     "hex": [
       "#d51d48",
       "#f24463",
       "#faede7",
       "#f7d3c3"
     ],
-    "creatorName": "creators inc"
+    "creatorName": "vamoos inc"
   },
   {
     "id": 4,
@@ -229,5 +229,93 @@
       "#005248"
     ],
     "creatorName": "bubble"
+  },
+  {
+    "id": "_rhwlanlss",
+    "colorScheme": "lito",
+    "hex": [
+      "#2B886d",
+      "#fbe894",
+      "#fcfaf1",
+      "#71dbd4"
+    ],
+    "creatorName": "creators inc"
+  },
+  {
+    "id": "_djtckim0t",
+    "colorScheme": "clo",
+    "hex": [
+      "#2B886d",
+      "#fbe894",
+      "#fcfaf1",
+      "#71dbd4"
+    ],
+    "creatorName": "creators inc"
+  },
+  {
+    "id": "_0r6hpwk0s",
+    "colorScheme": "bluesky",
+    "hex": [
+      "#2B886d",
+      "#bada55",
+      "#525941",
+      "#855d43"
+    ],
+    "creatorName": "holaaaaa inc"
+  },
+  {
+    "id": "_ia3nkwexy",
+    "colorScheme": "clo",
+    "hex": [
+      "#2B886d",
+      "#fbe894",
+      "#fcfaf1",
+      "#71dbd4"
+    ],
+    "creatorName": "creators inc"
+  },
+  {
+    "id": "_hun08pcna",
+    "colorScheme": "clo",
+    "hex": [
+      "#2B886d",
+      "#fbe894",
+      "#fcfaf1",
+      "#71dbd4"
+    ],
+    "creatorName": "creators inc"
+  },
+  {
+    "id": "_1gnjcsfmc",
+    "colorScheme": "Luke",
+    "hex": [
+      "#2B886d",
+      "#fbe894",
+      "#fcfaf1",
+      "#71dbd4"
+    ],
+    "creatorName": "hala inc"
+  },
+  {
+    "id": "_cko3p5g67",
+    "colorScheme": "Luke",
+    "hex": [
+      "#2B886d",
+      "#fbe894",
+      "#fcfaf1",
+      "#71dbd4"
+    ],
+    "creatorName": "hala inc"
+  },
+  {
+    "id": "_tktvj0t9g",
+    "colorScheme": "Luke",
+    "hex": [
+      "#2B886d",
+      "#fbe894",
+      "#fcfaf1",
+      "#71dbd4"
+    ],
+    "creatorName": "hala inc"
   }
 ]
