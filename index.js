@@ -26,7 +26,7 @@ app.get( '/api/color-schemes/:id', (req, res) => {
 })
 
 let randomizeIdNumber = () => {
-    return '_' + Math.random().toString(36).substr(2, 9);
+    return 'a' + Math.random().toString(36).substr(2, 9);
   }
 
 

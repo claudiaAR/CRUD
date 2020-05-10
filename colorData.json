@@ -23,7 +23,7 @@
   },
   {
     "id": 3,
-    "colorScheme": "Stella",
+    "colorScheme": "Luke",
     "hex": [
       "#d51d48",
       "#f24463",
@@ -243,25 +243,14 @@
   },
   {
     "id": "_djtckim0t",
-    "colorScheme": "clo",
+    "colorScheme": "Luke",
     "hex": [
       "#2B886d",
       "#fbe894",
       "#fcfaf1",
       "#71dbd4"
     ],
-    "creatorName": "creators inc"
-  },
-  {
-    "id": "_0r6hpwk0s",
-    "colorScheme": "bluesky",
-    "hex": [
-      "#2B886d",
-      "#bada55",
-      "#525941",
-      "#855d43"
-    ],
-    "creatorName": "holaaaaa inc"
+    "creatorName": "vamoos inc"
   },
   {
     "id": "_ia3nkwexy",
@@ -275,19 +264,8 @@
     "creatorName": "creators inc"
   },
   {
-    "id": "_hun08pcna",
-    "colorScheme": "clo",
-    "hex": [
-      "#2B886d",
-      "#fbe894",
-      "#fcfaf1",
-      "#71dbd4"
-    ],
-    "creatorName": "creators inc"
-  },
-  {
-    "id": "_1gnjcsfmc",
-    "colorScheme": "Luke",
+    "id": "ab3ndn90px",
+    "colorScheme": "Stella",
     "hex": [
       "#2B886d",
       "#fbe894",
@@ -297,24 +275,13 @@
     "creatorName": "hala inc"
   },
   {
-    "id": "_cko3p5g67",
-    "colorScheme": "Luke",
+    "id": "a6n5f5tp3p",
+    "colorScheme": "Stella",
     "hex": [
-      "#2B886d",
-      "#fbe894",
-      "#fcfaf1",
-      "#71dbd4"
-    ],
-    "creatorName": "hala inc"
-  },
-  {
-    "id": "_tktvj0t9g",
-    "colorScheme": "Luke",
-    "hex": [
-      "#2B886d",
-      "#fbe894",
-      "#fcfaf1",
-      "#71dbd4"
+      "#171d4b",
+      "#2ed3c6",
+      "#f8f5e6",
+      "#afe19f"
     ],
     "creatorName": "hala inc"
   }
