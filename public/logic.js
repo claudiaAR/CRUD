@@ -19,6 +19,7 @@ function getAllSchemes() {
     })
 }
 
+
 function printAllSchemes(colorData) {
     let allColorsContainer = document.getElementById("AllColorSchemes")
     allColorsContainer.innerHTML = "" //rensar tidagere innehåll
@@ -30,13 +31,15 @@ function printAllSchemes(colorData) {
 
         //loops through all hex-values and appends a new div per hex-value
         let colorDiv = document.createElement("div")
+        colorDiv.className = "oneScheme"
+
         scheme.hex.forEach(hex => {
             let hexDiv = document.createElement("div")
             hexDiv.className = "showHex"
             hexDiv.style.backgroundColor = hex
             colorDiv.appendChild(hexDiv)
         });
-
+        
         let id = document.createElement("h3")
         id.innerText = `ID = ${scheme.id}`
         id.className = "idname"
@@ -48,10 +51,10 @@ function printAllSchemes(colorData) {
         colorDiv.appendChild(colorScheme)
         colorDiv.appendChild(id)
         colorDiv.appendChild(creatorName)
-
         allColorsContainer.appendChild(colorDiv)
     });
 }
+
 
 getSpecificScheme = () => {
     let showScheme = document.getElementById("oneScheme")
@@ -131,7 +134,7 @@ async function updateScheme(event) {
             scheme[key] = value 
         }
 
-        console.log()
+        console.log('****HEEEEELPPP*****')
     }
 
    let schemeObject = document.getElementById("AllColorSchemes")
@@ -139,9 +142,6 @@ async function updateScheme(event) {
     console.log('helooooooooo',schemeNames)
 
     schemeObject.map(s => s.id !== selectedScheme.id)
-        
-
-
   
     await fetch('/api/color-schemes/' + scheme.id, {
         method: 'PUT',
@@ -150,10 +150,6 @@ async function updateScheme(event) {
         }, body: JSON.stringify(scheme, allColorsContainer)
     }) 
     getAllSchemes()
-
-            
-       
-   
 }
 
 async function createScheme(event) {
