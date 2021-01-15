@@ -315,5 +315,95 @@
       "#bada55",
       "#e2784e"
     ]
+  },
+  {
+    "id": "a8wzezs16u",
+    "colorScheme": "asdfad",
+    "hex": [
+      "#22c370",
+      "#e7d804",
+      "#cd1818",
+      "#941be4"
+    ]
+  },
+  {
+    "id": "avfoxoi9e2",
+    "colorScheme": "bluesky",
+    "hex": [
+      "#b41313",
+      "#cc17d9",
+      "#18b437",
+      "#5fdd9c"
+    ]
+  },
+  {
+    "id": "a3bw6b8obu",
+    "colorScheme": "pp",
+    "hex": [
+      "#98c224",
+      "#7f11bb",
+      "#5de598",
+      "#fbff0f"
+    ]
+  },
+  {
+    "id": "ab7ty4f819",
+    "colorScheme": "",
+    "hex": [
+      "#af8612",
+      "#358d38",
+      "#6e1bb1",
+      "#ab5717"
+    ]
+  },
+  {
+    "id": "atpsd0gtrz",
+    "colorScheme": "",
+    "hex": [
+      "#af8612",
+      "#358d38",
+      "#6e1bb1",
+      "#ab5717"
+    ]
+  },
+  {
+    "id": "aph3a8bugd",
+    "colorScheme": "",
+    "hex": [
+      "#af8612",
+      "#358d38",
+      "#6e1bb1",
+      "#ab5717"
+    ]
+  },
+  {
+    "id": "aha803qtmw",
+    "colorScheme": "clo",
+    "hex": [
+      "#af8612",
+      "#358d38",
+      "#6e1bb1",
+      "#ab5717"
+    ]
+  },
+  {
+    "id": "aw3bxu9x8l",
+    "colorScheme": "clo",
+    "hex": [
+      "#af8612",
+      "#358d38",
+      "#6e1bb1",
+      "#ab5717"
+    ]
+  },
+  {
+    "id": "aghuswk78f",
+    "colorScheme": "",
+    "hex": [
+      "#06164d",
+      "#f5eee6",
+      "#47c6ab",
+      "#000000"
+    ]
   }
 ]

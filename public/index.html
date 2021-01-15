@@ -15,20 +15,32 @@
             <h3 class="formSubtitle">Create and share your best color scheme</h3>
             <label for="newScheme"> Name of scheme: </label>
             <input id="newScheme" type="text" name="schemeName" placeholder="Color Scheme name" />
-            
-            <label for="hex1Input"> Hex value example #13a699 </label>
-            <input id="hex1Input" type="text" name="hex1" placeholder="HEX values 1" />
+         
+            <label for="hex1Input">Color 1</label>
+            <input type="color" id="hex1Input" name="hex1" placeholder="HEX values 1" value="#06164d">
 
-            <label for="hex2Input"></label>
+            <label for="hex2Input">Color 2</label>
+            <input type="color" id="hex2Input" name="hex2" value="#f5eee6">
+
+            <label for="hex3Input">Color 3</label>
+            <input type="color" id="hex3Input" name="hex3" value="#47c6ab">
+
+            <label for="hex4Input">Color 4</label>
+            <input type="color" id="hex4Input" name="hex4" value="#f56ba0">
+            
+            <!-- <label for="hex1Input"> Hex value example #13a699 </label>
+            <input id="hex1Input" type="text" name="hex1" placeholder="HEX values 1" /> -->
+
+            <!-- <label for="hex2Input"></label>
             <input id="hex2Input" type="text" name="hex2" placeholder="HEX values 2" />
 
             <label for="hex3Input"> </label>
             <input id="hex3Input" type="text" name="hex3" placeholder="HEX values 3" />
 
             <label for="hex4Input"> </label>
-            <input id="hex4Input" type="text" name="hex4" placeholder="HEX values 4" />
+            <input id="hex4Input" type="text" name="hex4" placeholder="HEX values 4" /> -->
 
-            <label for="creatorNameInput">Your name or Company name </label>
+            <label for="creatorNameInput">Your name </label>
             <input id="creatorNameInput" type="text" name="creator" placeholder="Your name" />
             <div class="flex">
                 <input id="formSubmit" type="submit" name="create" class="action-button" value="Create" />

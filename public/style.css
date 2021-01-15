@@ -28,9 +28,40 @@ body {
 }
 
 
+input#hex1Input {
+    background-color: transparent;
+    border: none;
+    height: 40px;
+}
+input#hex2Input {
+    background-color: transparent;
+    border: none;
+    height: 40px;
+}
+
+input#hex3Input {
+    background-color: transparent;
+    border: none;
+    height: 40px;
+}
+input#hex4Input {
+    background-color: transparent;
+    border: none;
+    height: 40px;
+}
+
+input#newScheme {
+    padding: 10px;
+}
+input#creatorNameInput{
+    padding: 10px;
+}
+input#userSchemeInput {
+    padding: 10px;
+}
 /*inputs*/
 #color-form input, #color-form textarea {
-	padding: 1rem;
+	/* padding: 1rem; */
 	margin-bottom: 0.6rem;
 	width: 100%;
 	box-sizing: border-box;

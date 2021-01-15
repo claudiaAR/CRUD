@@ -29,10 +29,10 @@ function printAllSchemes(colorData) {
         colorScheme.innerText = scheme.colorScheme
         colorScheme.className = "colorScheme"
 
-        //loops through all hex-values and appends a new div per hex-value
         let colorDiv = document.createElement("div")
         colorDiv.className = "oneScheme"
-
+        
+        //loops through all hex-values and appends a new div per hex-value
         scheme.hex.forEach(hex => {
             let hexDiv = document.createElement("div")
             hexDiv.className = "showHex"
@@ -78,8 +78,9 @@ getSpecificScheme = () => {
             colorDiv.appendChild(hexDiv)
         });
         let creatorName = document.createElement("h3")
-        creatorName.innerText = scheme.creatorName
+        creatorName.innerText = selectedScheme.creatorName
         creatorName.className = "creatorNameLightBG"
+        console.log('*****CREATOR*******UPDATE*******', scheme.creatorName)
 
         let updateButton = document.createElement("button")
         updateButton.innerText = 'Update'
@@ -111,6 +112,7 @@ printUpdateForm = () => {
     form.onsubmit = updateScheme
 
     console.log(updateScheme)
+    console.log('********************',selectedScheme)
 
 }
 
@@ -139,9 +141,9 @@ async function updateScheme(event) {
 
    let schemeObject = document.getElementById("AllColorSchemes")
     scheme.id = selectedScheme.id
-    console.log('helooooooooo',schemeNames)
+    console.log('helooooooooo',scheme.id)
 
-    schemeObject.map(s => s.id !== selectedScheme.id)
+    schemeObject.map(s => s.id !== scheme.id)
   
     await fetch('/api/color-schemes/' + scheme.id, {
         method: 'PUT',
